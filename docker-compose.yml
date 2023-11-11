@@ -1,0 +1,18 @@
+services:
+  inspircd:
+    image: "inspircd/inspircd-docker"
+    restart: always
+    networks:
+      - backend
+  tor:
+    build: "./tor"
+    networks:
+      - backend
+    volumes:
+      - "./tor/torrc:/etc/tor/torrc"
+      - "./tor/hidden_service:/var/lib/tor/hidden_service"
+    restart: always
+
+networks:
+  backend:
+    driver: bridge
