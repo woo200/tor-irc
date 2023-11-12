@@ -5,7 +5,7 @@ services:
     networks:
       - backend
     volumes:
-      - "./inspircd/conf:/inspircd/conf"
+      # - "./inspircd/conf:/inspircd/conf" # uncomment after first run
     environment:
       - INSP_NET_SUFFIX=.onion
       - INSP_NET_NAME=TorIrc
