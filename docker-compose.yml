@@ -12,16 +12,15 @@ services:
       - "./tor/torrc:/etc/tor/torrc"
       - "./tor/hidden_service:/var/lib/tor/hidden_service"
     restart: always
-  vsftpd:
-    image: "fauria/vsftpd"
-    volumes:
-      - "./vsftpd:/home/vsftpd"
+  filegator:
+    container_name: filegator
+    image: filegator/filegator
+    restart: always
     networks:
       - backend
-    environment:
-      - FTP_USER=ftp
-      - FTP_PASS=ftp
-    restart: always
+    volumes:
+      - ./filegator/files:/var/www/filegator/repository
+      - ./filegator/users.json:/var/www/filegator/private/users.json
 
 networks:
   backend:
