@@ -4,6 +4,13 @@ services:
     restart: always
     networks:
       - backend
+    volumes:
+      - "./inspircd/conf:/inspircd/conf"
+    environment:
+      - INSP_NET_SUFFIX=.onion
+      - INSP_NET_NAME=TorIrc
+      - INSP_SERVER_NAME=torirc
+      - INSP_CONNECT_PASSWORD=password
   tor:
     build: "./tor"
     networks:
