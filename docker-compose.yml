@@ -4,7 +4,7 @@ services:
     restart: always
     networks:
       - backend
-    volumes:
+    # volumes:
       # - "./inspircd/conf:/inspircd/conf" # uncomment after first run
     environment:
       - INSP_NET_SUFFIX=.onion
