@@ -1,0 +1,10 @@
+{
+    "2": {
+      "username": "guest",
+      "name": "Guest",
+      "role": "guest",
+      "homedir": "/guestfolder",
+      "permissions": "read|write|upload|download|batchdownload|zip",
+      "password": ""
+    }
+  }
