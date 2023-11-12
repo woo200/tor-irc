@@ -15,6 +15,7 @@ services:
     build: "./tor"
     networks:
       - backend
+      - internet
     volumes:
       - "./tor/torrc:/etc/tor/torrc"
       - "./tor/hidden_service:/var/lib/tor/hidden_service"
@@ -31,4 +32,7 @@ services:
 
 networks:
   backend:
+    driver: bridge
+    internal: true
+  internet:
     driver: bridge
