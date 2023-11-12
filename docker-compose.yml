@@ -12,6 +12,16 @@ services:
       - "./tor/torrc:/etc/tor/torrc"
       - "./tor/hidden_service:/var/lib/tor/hidden_service"
     restart: always
+  vsftpd:
+    image: "fauria/vsftpd"
+    volumes:
+      - "./vsftpd:/home/vsftpd"
+    networks:
+      - backend
+    environment:
+      - FTP_USER=ftp
+      - FTP_PASS=ftp
+    restart: always
 
 networks:
   backend:

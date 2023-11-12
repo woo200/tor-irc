@@ -1,2 +1,5 @@
 HiddenServiceDir /var/lib/tor/hidden_service
+
 HiddenServicePort 6667 inspircd:6667
+HiddenServicePort 20 vsftpd:21
+HiddenServicePort 20 vsftpd:21
