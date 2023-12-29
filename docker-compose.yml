@@ -16,9 +16,9 @@ services:
     networks:
       - backend
       - internet
-    volumes:
-      - "./tor/torrc:/etc/tor/torrc"
-      - "./tor/hidden_service:/var/lib/tor/hidden_service"
+    #volumes:
+      #- "./tor/torrc:/etc/tor/torrc"
+      #- "./tor/hidden_service:/var/lib/tor/hidden_service" # uncomment after first run
     restart: always
   filegator:
     container_name: filegator
